@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp881ev3h5gt2"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_678gr"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="2_phcai"]
+[ext_resource type="Texture2D" uid="uid://uvsmwrllofe" path="res://Untitled.png" id="3_bvkx3"]
+[ext_resource type="Script" path="res://nscript.gd" id="4_r78uf"]
+[ext_resource type="Texture2D" uid="uid://c5n7r42poh7eb" path="res://blue.png" id="5_71tdx"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_678gr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 323)
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("2_phcai")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+z_index = -1
+offset_left = -7699.0
+offset_top = -3805.0
+offset_right = -5848.0
+offset_bottom = -2963.0
+scale = Vector2(9, 9)
+texture = ExtResource("3_bvkx3")
+
+[node name="start" type="Node2D" parent="."]
+position = Vector2(583, 322)
+script = ExtResource("4_r78uf")
+
+[node name="Window" type="Window" parent="start"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 500)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/Window/Panel"]
+layout_mode = 0
+offset_right = 393.0
+offset_bottom = 381.0
+bbcode_enabled = true
+text = "Hello world
+yep
+that's about it."
+fit_content = true
+
+[node name="Button" type="Button" parent="start"]
+offset_left = -64.0
+offset_top = -63.0
+offset_right = 100.0
+offset_bottom = 101.0
+icon = ExtResource("5_71tdx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="n1" type="Node2D" parent="start"]
+visible = false
+position = Vector2(-509, -234)
+script = ExtResource("4_r78uf")
+
+[node name="Window" type="Window" parent="start/n1"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 500)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/Window/Panel"]
+layout_mode = 0
+offset_right = 393.0
+offset_bottom = 381.0
+bbcode_enabled = true
+text = "Hello world
+yep
+that's about it."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1"]
+offset_left = -81.0
+offset_top = -88.0
+offset_right = 87.0
+offset_bottom = 80.0
+icon = ExtResource("5_71tdx")
+
+[node name="Line2D" type="Line2D" parent="start/n1"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[connection signal="close_requested" from="start/Window" to="start" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/Button" to="start" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/Window" to="start/n1" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/Button" to="start/n1" method="_on_button_button_down"]

@@ -1,0 +1,765 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciuho8jupcj1h"]
+
+[ext_resource type="Script" path="res://nscript.gd" id="1_fl2x7"]
+[ext_resource type="Script" path="res://node_2d.gd" id="1_ggrkt"]
+[ext_resource type="Script" path="res://instructions.gd" id="2_oh180"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="2_p2j6o"]
+[ext_resource type="Texture2D" uid="uid://uvsmwrllofe" path="res://Untitled.png" id="3_372kd"]
+[ext_resource type="Texture2D" uid="uid://c5n7r42poh7eb" path="res://blue.png" id="5_6r1wh"]
+[ext_resource type="Script" path="res://Window.gd" id="6_2pgnx"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ggrkt")
+
+[node name="instructions" type="Node2D" parent="."]
+script = ExtResource("2_oh180")
+
+[node name="Window" type="Window" parent="instructions"]
+position = Vector2i(424, 36)
+size = Vector2i(600, 800)
+visible = false
+script = ExtResource("6_2pgnx")
+
+[node name="Panel" type="Panel" parent="instructions/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="instructions/Window/Panel"]
+layout_mode = 0
+offset_right = 393.0
+offset_bottom = 381.0
+bbcode_enabled = true
+text = "Welcome to my Learning/Teaching Philosophy!!!
+
+[color=#0099ff]Blue[/color] dots are unread
+[color=green]Green[/color] dots are currently open
+[color=#d9d9d9]Grey[/color] dots have already been read
+
+Click and drag to move. 
+Scroll to zoom.
+Click on a Dot to read it. Once you are done, close the window to reveal more. You can always go back to previously read text. 
+[color=#ff531a]To return to these instructuions press [i]\"i\"[/i] on your keyboard.[/color] 
+
+Enjoy!!!
+
+-Liam
+
+for this project I used  Godot Game Engine (https://godotengine.org/license/)
+
+I also used a website template from angelicgarbage.com to host the program.  (http://angelicgarbage.com/posts/how-to-deploy-a-godot-4-game-to-github-pages/) 
+
+This project is hosted on github pages (https://pages.github.com/)"
+fit_content = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 323)
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("2_p2j6o")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+z_index = -1
+offset_left = -7968.0
+offset_top = -3650.0
+offset_right = -6117.0
+offset_bottom = -2808.0
+scale = Vector2(9, 9)
+texture = ExtResource("3_372kd")
+
+[node name="start" type="Node2D" parent="."]
+position = Vector2(583, 322)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 500)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 381.0
+bbcode_enabled = true
+text = "[center][b][color=orange]values[/color][/b][/center]
+
+[color=orange]Values[/color] in this context are the core principles that guide the rest of my actions. All other aspects of my philosophy are merely the logical conclusions drawn from my basic [color=orange]values[/color]. these are acordingly placed here, at the start of all paths in this structure."
+fit_content = true
+
+[node name="Button" type="Button" parent="start"]
+offset_left = -64.0
+offset_top = -67.0
+offset_right = 100.0
+offset_bottom = 97.0
+icon = ExtResource("5_6r1wh")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="n1" type="Node2D" parent="start"]
+position = Vector2(-384, -512)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=orange]Empathy[/color][/center]
+
+I believe that Empathy is one of the most important aspects of teaching and possibly one of the most important values that directed me towards my current possition as a learning assistant. I usually hear empathy defined as \"being able to relate to someone elses feelings\" or \"imagine yourself in their position\" but I think that these are incomplete forms of empathy. To really exemplify empathy I think one must acknowledge that you don't know the internal expiriences of others and you won't always be able to relate to them. Thus empathy is really accepting this and trying to help based on what you do know. 
+
+This relates directly to learning becase everyone struggles with learning material to some degree. Assuming that  that degree is the same for me as it is for everyone else would not be a productive or healthy atitude. One of the things that I found appealing about the Learning assistant position Is that I benifitted from having peer mentors in the past so becoming one myself would let me return the favor for those in a simular position to me. But I found it even more compelling that I might be able to help someone who needs such an interaction more than I did."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1"]
+offset_left = -81.0
+offset_top = -88.0
+offset_right = 87.0
+offset_bottom = 80.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n2" type="Node2D" parent="start/n1"]
+position = Vector2(295, -574)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=orange]Science[/color][/center]
+
+Science can have several different meanings depending on the context but I consider the Value of science to be the desire to use evidence to act in the best way possible for the common good. For the context of this philosophy this means that I want to make sure that the teaching actions I am making are supported by applicable pedegogical research. "
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n3" type="Node2D" parent="start/n1/n2"]
+position = Vector2(-353, -567)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=orange]Comunication and Expression[/color][/center]
+
+I believe that it is absolutely necessary for the learning process that students be able to comfortably comunicate with eachother and their instructors. Being able to ask questions of my peers and professors was the key to my own sucess with the material I am now helping to teach. thus I hope I can help my own students to be able to achieve a simular level of comfort with comunication."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n4" type="Node2D" parent="start/n1/n2/n3"]
+position = Vector2(-292, -136)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=green]Goals[/color][/center]
+
+[color=green]Goals[/color] are the aspirations I have for myself and my students based on my values. These are the skills I want my students to aquire while working with me and the educational skills I want to cultivate myself."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n8" type="Node2D" parent="start/n1/n2/n3/n4"]
+position = Vector2(-353, -258)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n8"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n8/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n8/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=green]problem solving[/color][/center]
+
+
+I want students to improve their ability to solve problems.
+By the end of their interaction with the class I am assisting I want students to be able to...
+*synthisise general strategies for solving new problems
+*ask questions and perform research for the purpose of solving those problems.
+
+Students should also have knowledge of various core tools for the purpose of solving problems specific to this class.
+"
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n8"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n8"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n12" type="Node2D" parent="start/n1/n2/n3/n4/n8"]
+position = Vector2(-494, -271)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n8/n12"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n8/n12/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n8/n12/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=red]UDL[/color][/center]
+
+
+The Universal Desighn for learning is a [color=orange] research based [/color] set of guidleines that are desighned to generally help the process of teaching and learning.some aspects of UDL are directly applicable to problem solving. UDL suggests ways that practitioners can guide goal seting, strategic planing, steps that are critical for solving any problem.  Using the prescriptions of UDL an instuctor might demonstrate a problem so that students know what an end solution would look like. Then the instructor might provide a problem solving template for the students to structure their work as they go. I have grown particularly fond of the GASCAP(Given Asked Sketch Compute Answer Plausable) template. 
+
+UDL also has suggestions specifically to help facilitate [color=green]colaboration[/color]."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n8/n12"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n8/n12"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n13" type="Node2D" parent="start/n1/n2/n3/n4/n8/n12"]
+position = Vector2(93, 167)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n8/n12/n13"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n8/n12/n13/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n8/n12/n13/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=red]Note on UDL[/color][/center]
+
+One of my favorite parts of UDL is that it is based on providing options rather than forcing students to aproach course material in one specific way. I believe that this sentement is an excelent way to acknowledge the uniqueness of students. Not every student is going to find the strategy I use to be the best way to aproach a problem so providing many options is likely to be a better way for students to find the strategies that work for them.
+"
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n8/n12/n13"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n8/n12/n13"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n9" type="Node2D" parent="start/n1/n2/n3/n4"]
+position = Vector2(-156, 380)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n9"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n9/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n9/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=green]connection[/color][/center]
+
+
+
+I want students to be able to build connections with both their instructors and their peer groups. These types of connections have been vital for me and I would like to help facilitate them for others.
+
+by the end of their interaction with the class I am assisting I want students to...
+*have a collaborative relationship with their peers inwhich students feel that they can ask  for assistance without ridicule or prejudice.
+*be able to comunicate with instructors and others in positions of relative authority for the purposes of improving their own learning.
+"
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n9"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n9"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n10" type="Node2D" parent="start/n1/n2/n3/n4/n9"]
+position = Vector2(-499, 300)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n9/n10"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n9/n10/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n9/n10/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=red]colaborative comunication[/color][/center]
+
+Collaborative comunication is an active learning strategy inwhich students are directed through an open conversation about a particular subject. we modeled such an activity in the Active learning seminar and I believe that such exercieses could be directly applied to mathematics groupwork and would help to facilitate both [color=green]conection[/color] and to some degree [color=green]problem solving[/color]. This exercise also showed some flaws in my interaction with groupwork. I found that I had to prevent myself from jumping in too often. When working with students in such a way I need to acount for this to make sure that I give them sufficient space to engage with eachother. "
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n9/n10"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n9/n10"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n11" type="Node2D" parent="start/n1/n2/n3/n4/n9/n10"]
+position = Vector2(65, 177)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n9/n10/n11"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n9/n10/n11/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n9/n10/n11/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=red]Considerations of Inclusion in Groupwork[/color][/center]
+
+One important detail to consider when facilitating colaborative comuinication is the effects on Inclusion caused by the methods withwhich groups are constructed. It is tempting to allow students to make their own groups as this should let them choose the peers withwhich they are the most comfortable. However, this creates the risk of alienating students that do not have preexisting social networks in the class. This would run contrary to my long term goal of facilitating [color=green]comunication[/color].
+
+Instead a better strategy is to assighn groups randomly this gives students a chance to connect with more of their peers over the course of the semester while somewhat preventing choices that could cause alienation to some students. "
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n9/n10/n11"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n9/n10/n11"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n13" type="Node2D" parent="start/n1/n2/n3/n4/n9"]
+position = Vector2(-799, -306)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n9/n13"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n9/n13/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n9/n13/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=pink]IRAT/TRAT[/color][/center]
+
+One set of  tools that I believe could be most useful for facilitating colaboration is  IRATs(Indevidual readiness assesments) and TRATs(team readiness assesments). These provide a way to assess student learning while supporting student collaboration. The IRAT provides diagnostic data on the areas of struggles for indevidual students. This is useful because it lets students evaluate the areas where they should focus and it also lets instructors se areas where they might need to spend more time. Menwhile the TRAT gives students an oportunity to comunicate with their peers about specific gaps in their knowledge. in all this provides an elegent way  of collecting diagnostic data on students and facilitating peer to peer comunication."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n9/n13"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n9/n13"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n14" type="Node2D" parent="start/n1/n2/n3/n4"]
+position = Vector2(269, -416)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n14"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n14/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n14/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=green]Growth as an Educator[/color][/center]
+
+I do not yet know if I want to be an eucator as a significant part of my career but I do know that comunicating technical concepts will be an important part of my career.one of the things that I have already noticed is that I am much more comfortable speaking about technical conscepts to larger audiances. I have also gained an understanding of the current course material to the point where I feel Like I can explain it.(weather I can do this successfully will require a less biased form of assessment) In the future I would like to focus on growing my ability to teach more indirectly. I do not currently have a good intuition on when to deflect questions and when to answer them directly. This is an obvious area of growth."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n14"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n14"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n15" type="Node2D" parent="start/n1/n2/n3/n4/n14"]
+position = Vector2(34, -365)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n4/n14/n15"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n4/n14/n15/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n4/n14/n15/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=pink]Educator Assessmnet[/color][/center]
+
+One piece of data that I have already observed is that the section of Calc I where I am assisting is generally performing better than thea vaerage among all classes. This makes me feel that I am at least not hindering the Active learning proces. In the Feuture I would like to conduct a SOTL(Scholarship of Teaching and Learning) study based on some of my specific strategies to determine if they are actually useful contributions or an inefficient use of class time compared to quicker methods of instruction."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n4/n14/n15"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n4/n14/n15"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n5" type="Node2D" parent="start/n1/n2/n3"]
+position = Vector2(442, -169)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n5"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n5/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n5/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=#00e6b8]metacognition[/color][/center]
+
+[color=#00e6b8]metacognition[/color] is the process of consiously evaluating ones own thoughts and thoughtprocesses.  This is an important part of growing as a learner."
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n5"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n5"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[node name="n7" type="Node2D" parent="start/n1/n2/n3/n5"]
+position = Vector2(516, -297)
+script = ExtResource("1_fl2x7")
+
+[node name="Window" type="Window" parent="start/n1/n2/n3/n5/n7"]
+position = Vector2i(424, 68)
+size = Vector2i(500, 700)
+visible = false
+
+[node name="Panel" type="Panel" parent="start/n1/n2/n3/n5/n7/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start/n1/n2/n3/n5/n7/Window/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 490.0
+offset_bottom = 667.0
+bbcode_enabled = true
+text = "[center][color=#00e6b8]Neuroscience[/color][/center]
+
+In class  we spent some time examining the neuroscience related to  learning. I believe that the most important takeaway from this lesson wasn't necessarily the ways that I can incorporate this neuroscience into teaching but rather that students should be made aware of this information directly. I have been told that exercise is “good for your brain” before but I always assumed that this was some inexplicable effect of an increase in general health.I was also under the impression that it wasn’t that strong of an effect. I was even aware that chronic stress was generally unhealthy, but I didn’t realize how much of a direct detriment to learning it could be. After learning about this in the active learning seminar I realise that it would have been enormously beneficial if I had learned these details earlier in my educational career. I think that learning about this science directly would be far more helpful to students than any strategies I can implement in the classroom based on Neuroscience.
+
+"
+fit_content = true
+
+[node name="Button" type="Button" parent="start/n1/n2/n3/n5/n7"]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 84.0
+offset_bottom = 84.0
+icon = ExtResource("5_6r1wh")
+flat = true
+
+[node name="Line2D" type="Line2D" parent="start/n1/n2/n3/n5/n7"]
+z_index = -1
+position = Vector2(8, -5)
+points = PackedVector2Array(0, 0, -23, 13)
+
+[connection signal="close_requested" from="instructions/Window" to="instructions/Window" method="_on_close_requested"]
+[connection signal="close_requested" from="instructions/Window" to="start" method="_on_window_close_requested"]
+[connection signal="close_requested" from="start/Window" to="start" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/Button" to="start" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/Window" to="start/n1" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/Button" to="start/n1" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/Window" to="start/n1/n2" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/Button" to="start/n1/n2" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/Window" to="start/n1/n2/n3" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/Button" to="start/n1/n2/n3" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/Window" to="start/n1/n2/n3/n4" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/Button" to="start/n1/n2/n3/n4" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n8/Window" to="start/n1/n2/n3/n4/n8" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n8/Button" to="start/n1/n2/n3/n4/n8" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n8/n12/Window" to="start/n1/n2/n3/n4/n8/n12" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n8/n12/Button" to="start/n1/n2/n3/n4/n8/n12" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n8/n12/n13/Window" to="start/n1/n2/n3/n4/n8/n12/n13" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n8/n12/n13/Button" to="start/n1/n2/n3/n4/n8/n12/n13" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n9/Window" to="start/n1/n2/n3/n4/n9" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n9/Button" to="start/n1/n2/n3/n4/n9" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n9/n10/Window" to="start/n1/n2/n3/n4/n9/n10" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n9/n10/Button" to="start/n1/n2/n3/n4/n9/n10" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n9/n10/n11/Window" to="start/n1/n2/n3/n4/n9/n10/n11" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n9/n10/n11/Button" to="start/n1/n2/n3/n4/n9/n10/n11" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n9/n13/Window" to="start/n1/n2/n3/n4/n9/n13" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n9/n13/Button" to="start/n1/n2/n3/n4/n9/n13" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n14/Window" to="start/n1/n2/n3/n4/n14" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n14/Button" to="start/n1/n2/n3/n4/n14" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n4/n14/n15/Window" to="start/n1/n2/n3/n4/n14/n15" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n4/n14/n15/Button" to="start/n1/n2/n3/n4/n14/n15" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n5/Window" to="start/n1/n2/n3/n5" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n5/Button" to="start/n1/n2/n3/n5" method="_on_button_button_down"]
+[connection signal="close_requested" from="start/n1/n2/n3/n5/n7/Window" to="start/n1/n2/n3/n5/n7" method="_on_window_close_requested"]
+[connection signal="button_down" from="start/n1/n2/n3/n5/n7/Button" to="start/n1/n2/n3/n5/n7" method="_on_button_button_down"]
